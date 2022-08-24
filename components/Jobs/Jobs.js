@@ -10,7 +10,7 @@ import useFetch from '../../hooks/useFetch';
 import Config from 'react-native-config';
 import Card from '../Card';
 import Styles from './Jobs.styles';
-import JobDetail from '../JobDetail/JobDetail';
+
 const Jobs = props => {
   const { data, error, loading } = useFetch(
     Config.BASE_URL + 'jobs?page=' + '0' + '&api_key=' + Config.API_KEY,
@@ -43,8 +43,6 @@ const Jobs = props => {
       </Pressable>
     );
   };
-
-  console.log(data.results);
 
   return (
     <View>

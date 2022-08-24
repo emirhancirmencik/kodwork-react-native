@@ -27,4 +27,25 @@ export default StyleSheet.create({
   myColor: {
     color: '#bc5555',
   },
+  btn: {
+    backgroundColor: '#bc5555',
+    marginHorizontal: 10,
+    height: 50,
+    flex: 1,
+    borderRadius: 20,
+    justifyContent: 'center',
+    alignItems: 'center',
+    flexDirection: 'row',
+  },
+  btnContainer: {
+    padding: 10,
+    flexDirection: 'row',
+  },
+  btnText: {
+    color: 'white',
+    textAlign: 'center',
+    fontWeight: '700',
+    fontSize: 20,
+    marginLeft: 5,
+  },
 });

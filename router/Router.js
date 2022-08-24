@@ -1,10 +1,9 @@
-import { StyleSheet, Text, View } from 'react-native';
 import React from 'react';
 import 'react-native-gesture-handler';
 import { createDrawerNavigator } from '@react-navigation/drawer';
-import Favorites from '../components/Favorites';
-import Wrapper from '../Wrapper';
+import Wrapper from '../components/Wrapper/Wrapper';
 import JobsRouter from './Jobs/JobsRouter';
+import FavoritesRouter from './Favorites/FavoritesRouter';
 
 const Drawer = createDrawerNavigator();
 
@@ -21,7 +20,7 @@ const App = () => {
         />
         <Drawer.Screen
           name="Favorites"
-          component={Favorites}
+          component={FavoritesRouter}
           options={{
             headerShown: false,
           }}

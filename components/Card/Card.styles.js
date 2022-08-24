@@ -2,7 +2,7 @@ import { StyleSheet } from 'react-native';
 
 export default StyleSheet.create({
   card: {
-    marginVertical: 10,
+    marginVertical: 5,
     borderRadius: 10,
     padding: 10,
     borderColor: '#e0e0e0',
@@ -37,5 +37,17 @@ export default StyleSheet.create({
     fontWeight: '700',
     fontSize: 20,
     textAlign: 'right',
+  },
+  button: {
+    backgroundColor: '#bc5555',
+    borderRadius: 10,
+    padding: 10,
+    marginTop: 10,
+  },
+  btnText: {
+    color: 'white',
+    textAlign: 'center',
+    fontWeight: '700',
+    fontSize: 20,
   },
 });
