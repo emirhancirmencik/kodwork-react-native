@@ -7,9 +7,16 @@ Kodwork React Native App
 Kodwork app is an assignment of patika.dev react-native course.
 Allows you to look up a jobs and can add favorite them.
 
-<img src="joblist.png" alt="Job List" width="200"/>
-<img src="jobdetail.png" alt="Job Detail" width="200"/>
-<img src="favoritejobs.png" alt="Favorite Jobs" width="200"/>
+<table>
+  <tr>
+    <td valign="top"><img src="joblist.png" alt="Job List" width="200"/></td>
+    <td valign="top"><img src="jobdetail.png" alt="Job Detail" width="200"/></td>
+    <td valign="top"><img src="favoritejobs.png" alt="Favorite Jobs" width="200"/></td>
+  </tr>
+</table>
+
+
+
 
 Technologies Used
 -----------------
