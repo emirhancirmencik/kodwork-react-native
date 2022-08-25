@@ -48,4 +48,7 @@ export default StyleSheet.create({
     fontSize: 20,
     marginLeft: 5,
   },
+  disabled: {
+    backgroundColor: '#bcbcbc',
+  },
 });

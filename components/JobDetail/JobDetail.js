@@ -1,4 +1,4 @@
-import { View, Text, Pressable } from 'react-native';
+import { View, Text, Pressable, Alert } from 'react-native';
 import React, { useState } from 'react';
 import Styles from './JobDetail.styles';
 import { WebView } from 'react-native-webview';
@@ -9,6 +9,7 @@ import {
   removeFavorite,
 } from '../../redux/favoritesSlice/favoritesSlice';
 import { useSelector } from 'react-redux';
+import { sumbit } from '../../redux/submitsSlice/submitsSlice';
 
 const JobDetail = props => {
   const job = props.route.params;
@@ -17,10 +18,15 @@ const JobDetail = props => {
   const dispatch = useDispatch();
 
   const favorites = useSelector(state => state.favorites.list);
+  const submits = useSelector(state => state.submits.list);
+
   const [inFavorite, setInfavorite] = useState(
     favorites.findIndex(favorite => favorite.id === job.id) === -1
       ? false
       : true,
+  );
+  const [isSubmitted, setIsSubmitted] = useState(
+    submits.findIndex(submit => submit === job.id) === -1 ? false : true,
   );
 
   const handleFavorite = item => {
@@ -34,6 +40,26 @@ const JobDetail = props => {
     if (inFavorite) {
       dispatch(removeFavorite(item));
       setInfavorite(false);
+    }
+  };
+
+  const handleSubmit = item => {
+    if (!isSubmitted) {
+      dispatch(sumbit(item.id));
+      setIsSubmitted(true);
+      Alert.alert(
+        'Job submitted',
+        job.name + ' named job is submitted!',
+        [
+          {
+            text: 'Cancel',
+            style: 'cancel',
+          },
+        ],
+        {
+          cancelable: true,
+        },
+      );
     }
   };
 
@@ -58,7 +84,10 @@ const JobDetail = props => {
         />
       </View>
       <View style={Styles.btnContainer}>
-        <Pressable style={Styles.btn} onPress={() => handleFavorite(job)}>
+        <Pressable
+          style={[Styles.btn, isSubmitted && Styles.disabled]}
+          onPress={() => handleSubmit(job)}
+          disabled={isSubmitted}>
           <View>
             <Icon name="enter" size={25} color="white" />
           </View>

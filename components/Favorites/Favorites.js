@@ -1,4 +1,4 @@
-import { FlatList, Pressable, StyleSheet, Text, View } from 'react-native';
+import { FlatList, Pressable, StyleSheet, View } from 'react-native';
 import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import Card from '../Card';
