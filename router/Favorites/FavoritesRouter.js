@@ -20,7 +20,15 @@ const FavoritesRouter = () => {
           headerTitleStyle: styles.title,
         }}
       />
-      <Stack.Screen name="JobDetail" component={JobDetail} />
+      <Stack.Screen
+        name="JobDetail"
+        component={JobDetail}
+        options={{
+          headerTitle: 'Job Detail',
+          headerTitleAlign: 'center',
+          headerTitleStyle: styles.title,
+        }}
+      />
     </Stack.Navigator>
   );
 };
